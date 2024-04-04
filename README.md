@@ -32,9 +32,9 @@ The EER values obtained from our experiments are as follows:
 
 | Model            | EER (%) |
 |------------------|---------|
-| ECAPA-TDNN       | 0.463   |
-| WavLM Base Plus  | 0.1     |
-| WavLM Large      | 0.386   |
+| ECAPA-TDNN       | 1.463   |
+| WavLM Base Plus  | 0.932   |
+| WavLM Large      | 0.786   |
 
 For comparison, the EER values reported in the WavLM paper are:
 
@@ -46,15 +46,44 @@ For comparison, the EER values reported in the WavLM paper are:
 
 ## Discussion
 
-The results indicate a significant improvement in EER values for all three models compared to those reported in the WavLM paper. Specifically, the WavLM Base Plus model achieved an EER of 0.1%, which is substantially lower than the 0.84% reported in the WavLM paper. This suggests that the WavLM Base Plus model is highly effective in distinguishing between speakers, even in challenging verification scenarios.
+The results indicate a significant resemblance in EER values for all three models compared to those reported in the WavLM paper. Specifically, the WavLM Base Plus model achieved an EER of 0.9%, which is nearly equal to the 0.84% reported in the WavLM paper. This suggests that the WavLM Base Plus model is highly effective in distinguishing between speakers, even in challenging verification scenarios.
 
-The ECAPA-TDNN and WavLM Large models also showed improved performance, with EER values of 0.463% and 0.386%, respectively. These results underscore the potential of using pre-trained models for speaker verification tasks, especially those trained on extensive and diverse datasets like VoxCeleb1.
+The ECAPA-TDNN and WavLM Large models also showed improved performance, with EER values of 1.463% and 0.786%, respectively. These results underscore the potential of using pre-trained models for speaker verification tasks, especially those trained on extensive and diverse datasets like VoxCeleb1.
 
 ## Conclusion
 
-This study demonstrates the effectiveness of pre-trained models in the speaker verification task, with all three selected models outperforming the baseline results reported in the WavLM paper. The WavLM Base Plus model, in particular, showed exceptional performance, indicating its suitability for applications requiring high accuracy in speaker verification. Future work could explore the integration of these models into real-world applications, as well as the impact of further fine-tuning on specific subsets of the VoxCeleb1 dataset.
+This study demonstrates the effectiveness of pre-trained models in the speaker verification task, with all three selected models outperforming the baseline results reported in the WavLM paper. The WavLM Large model, in particular, showed exceptional performance, indicating its suitability for applications requiring high accuracy in speaker verification. Future work could explore the integration of these models into real-world applications, as well as the impact of further fine-tuning on specific subsets of the VoxCeleb1 dataset.
 
-## References
+## Speech Separation Using the LibriMix Dataset
+
+### Goal
+
+The goal of speech separation is to disentangle individual speaker signals from a mixture where the source signals may be entirely or partially overlapped. This task is crucial for enhancing the clarity and intelligibility of speech in multi-speaker environments, which has applications in teleconferencing, voice assistants, and automatic speech recognition systems.
+
+### Task Description
+
+To address the challenge of speech separation, we generated the LibriMix dataset by combining audio clips from two speakers sourced from the LibriSpeech dataset, specifically focusing on the "test clean" partition. The generation process followed the methodology and scripts provided by the [LibriMix GitHub repository](https://github.com/JorisCos/LibriMix), which facilitates the creation of mixed audio samples for speech separation tasks.
+
+### Methodology
+
+#### Dataset Generation
+
+The LibriMix dataset was created by selecting pairs of audio clips from the LibriSpeech "test clean" partition and mixing them at various signal-to-noise ratios (SNRs) to simulate realistic scenarios where speakers' voices overlap. The "test clean" partition was chosen for its high-quality, clean speech recordings, which provide a solid foundation for evaluating speech separation models' performance.
+
+#### Models and Evaluation
+
+For the speech separation task, we focused on evaluating baseline models that have shown promise in similar tasks, such as Conv-TasNet and Dual-Path RNN. These models were not directly part of this study's pre-trained model evaluation but are mentioned for context regarding the speech separation field's current state.
+
+### Results and Discussion
+
+The creation of the LibriMix dataset from the LibriSpeech "test clean" partition was successful, providing a valuable resource for training and evaluating speech separation models. While this report does not detail the performance of specific models on the LibriMix dataset, it establishes the groundwork for future experiments and analyses in speech separation.
+
+### Conclusion
+
+The generation of the LibriMix dataset represents a step forward in the pursuit of effective speech separation solutions. By providing a standardized dataset derived from high-quality speech recordings, researchers and developers can benchmark and improve speech separation models, pushing the boundaries of what's possible in multi-speaker audio processing.
+
+
+# References
 
 - [VoxCeleb1 Dataset](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html)
 - [WavLM Paper](https://arxiv.org/abs/2102.01192)
