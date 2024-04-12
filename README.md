@@ -77,11 +77,11 @@ For the speech separation task, we focused on evaluating baseline models that ha
 ### Results and Discussion
 
 The creation of the LibriMix dataset from the LibriSpeech "test clean" partition was successful, providing a valuable resource for training and evaluating speech separation models. While this report does not detail the performance of specific models on the LibriMix dataset, it establishes the groundwork for future experiments and analyses in speech separation.
-| Epoch           | 0 | 1 |
-|------------------|---------|-----------|                               
-| Loss       | -13.47    | -2.47  |
-| SI_SNR  | 13.46    | 2.34  |
-| SDR      | 14.27   | 3.51  |
+| Epoch |  0   | 1   |
+|-------|------|-----|                               
+| Loss  |-13.47|-2.47|
+| SI_SNR|13.46 |2.34 |
+| SDR   |14.27 |3.51 |
 
 
 ### Conclusion
